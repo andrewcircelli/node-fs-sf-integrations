@@ -58,6 +58,16 @@ app.get("/api/account/:id", (req, res) => {
   });
 });
 
+app.use((req, res) => {
+  const err = new Error("Page Not Found!");
+  err.status = 404;
+  res.json({
+    err: {
+      message: err.message,
+    },
+  });
+});
+
 // Server up
 app.listen(PORT, () => {
   console.log(`server is now listening at http:localhost:${PORT}`);
