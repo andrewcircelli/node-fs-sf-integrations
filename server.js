@@ -58,7 +58,7 @@ app.get("/api/account/:id", (req, res) => {
   });
 });
 
-// Listen
+// Server up
 app.listen(PORT, () => {
   console.log(`server is now listening at http:localhost:${PORT}`);
 });
