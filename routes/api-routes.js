@@ -1,10 +1,11 @@
 // *********************************************************************************
 // api-routes.js - this file offers a set of routes for displaying data to the client
 // *********************************************************************************
-// const createConnection = require("../config/config-not-active");
+const connectionCheck = require("../config/config");
 
 module.exports = function (app) {
-  app.get("/api/accounts", (req, res) => {
+  app.get("/api/accounts", async (req, res) => {
+    conn = await connectionCheck();
     conn.query("SELECT Id, Name FROM Account", (err, accounts) => {
       if (err) {
         console.log(err);
@@ -14,8 +15,8 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/account/:id", (req, res) => {
-    createConnection();
+  app.get("/api/account/:id", async (req, res) => {
+    conn = await connectionCheck();
     conn.sobject("Account").retrieve(req.params.id, (err, account) => {
       if (err) {
         console.log(err);

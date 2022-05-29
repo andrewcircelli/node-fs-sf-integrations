@@ -1,6 +1,7 @@
 // Caller Functions to Express Server
 const getSalesforceAccounts = async (req, res) => {
-  const { data } = await axios.get("/api/accountsd");
+  const { data } = await axios.get("/api/accounts");
+  console.log(data.records);
   showOutput(data);
 };
 // Event Listeners
