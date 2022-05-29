@@ -15,8 +15,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/account/:id", async (req, res) => {
-    conn = await connectionCheck();
+  app.get("/api/account/:id", (req, res) => {
     conn.sobject("Account").retrieve(req.params.id, (err, account) => {
       if (err) {
         console.log(err);
