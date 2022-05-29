@@ -37,20 +37,6 @@ async function salesforceLogin() {
   }
   return conn;
 }
-// function createConnection() {
-//   new jsforce.Connection({
-//     loginURL: SF_LOGIN_URL,
-//   });
-//   conn.login(SF_USERNAME, SF_PASSWORD + SF_TOKEN, (err, userInfo) => {
-//     if (err) {
-//       return console.error(err);
-//     } else {
-//       console.log(
-//         `login successful for user id: ${userInfo.id} on organization id: ${userInfo.organizationId}`
-//       );
-//     }
-//   });
-// }
 
 async function initSalesforceConnection() {
   if (!conn) {

@@ -1,5 +1,5 @@
 // *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying data to the client
+// api-routes.js - this file offers a set of routes for displaying data via jsforce to the client
 // *********************************************************************************
 const connectionCheck = require("../config/config");
 

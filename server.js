@@ -8,23 +8,6 @@ const dotenv = require("dotenv");
 const config = dotenv.config;
 config();
 
-// const fs = require("fs");
-
-const { SF_LOGIN_URL, SF_USERNAME, SF_PASSWORD, SF_TOKEN } = process.env;
-// init sf connection and login
-// const conn = new jsforce.Connection({
-//   loginURL: SF_LOGIN_URL,
-// });
-// conn.login(SF_USERNAME, SF_PASSWORD + SF_TOKEN, (err, userInfo) => {
-//   if (err) {
-//     return console.error(err);
-//   } else {
-//     console.log(
-//       `login successful for user id: ${userInfo.id} on organization id: ${userInfo.organizationId}`
-//     );
-//   }
-// });
-
 // Express app
 // =============================================================
 const PORT = process.env.PORT || 8080;
